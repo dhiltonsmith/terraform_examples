@@ -18,3 +18,14 @@
 provider "aws" {
   region = var.aws_region
 }
+
+# ____   __  ____  __
+#(    \ / _\(_  _)/ _\
+# ) D (/    \ )( /    \
+#(____/\_/\_/(__)\_/\_/
+# ASCII art generated at patorjk.com (http://patorjk.com/software/taag/ <FONT: Graceful>)
+#
+# Data that will be used within the module.
+
+data "aws_ec2_instance_type_offerings" "instance_types" {
+}
