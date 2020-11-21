@@ -28,4 +28,8 @@ provider "aws" {
 # Data that will be used within the module.
 
 data "aws_ec2_instance_type_offerings" "instance_types" {
+  filter {
+    name   = "instance-type"
+    values = local.instance_classes
+  }
 }

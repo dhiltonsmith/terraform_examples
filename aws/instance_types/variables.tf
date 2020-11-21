@@ -8,5 +8,26 @@
 
 variable "aws_region" {
   description = "Region that terraform module will be run in."
+
   default     = "us-west-2"
 }
+
+variable "instance_classes" {
+  description = "Instance classes to lookup."
+  type        = list(string)
+
+  default     = ["*"]
+}
+
+# __     __    ___   __   __    ____ 
+#(  )   /  \  / __) / _\ (  )  / ___)
+#/ (_/\(  O )( (__ /    \/ (_/\\___ \
+#\____/ \__/  \___)\_/\_/\____/(____/
+# ASCII art generated at patorjk.com (http://patorjk.com/software/taag/ <FONT: Graceful>)
+#
+# Locals logic that is used for manipulating data.
+
+locals {
+  instance_classes = formatlist("%s.*", var.instance_classes)
+}
+
